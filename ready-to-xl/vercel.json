@@ -4,11 +4,14 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "functions": {
-    "src/app/api/chat/route.ts": {
+    "src/pages/api/chat.ts": {
       "maxDuration": 30
     }
   },
-  "env": {
-    "OPENAI_API_KEY": "@openai_api_key"
-  }
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
+  ]
 }
